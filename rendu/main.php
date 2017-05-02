@@ -1,11 +1,11 @@
 <p id="js">Hello World</p>
 
-<form>
-	<div class="gallery">
+<form class="gallery">
+	<div class="image">
 		<input type="radio" name="mask" value="barbe1">
 		<img src="./img_src/barbe1.png" alt="barbe1"/>
 	</div>
-	<div class="gallery">
+	<div class="image">
 		<input type="radio" name="mask" value="barbe2"><br>
 		<img src="./img_src/barbe2.png" alt="barbe1"/>
 	</div>

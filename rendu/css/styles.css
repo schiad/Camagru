@@ -13,20 +13,20 @@ input {
 	margin-left: 42px;
 }
 
-form {
+.gallery {
 	width: 100%;
 	display: flex;
 	flex-flow: row wrap;
 }
 
-div.gallery {
+div.image {
 	margin: 5px;
-	border: 1px solid #ccc;
+	border: 3px solid #000;
 	width: 100px;
 	height: auto;
 }
 
-div.gallery img {
+div.image img {
 	width: 100%;
 	height: auto;
 }
@@ -54,7 +54,7 @@ footer {
     bottom: 0;
     left: 0;
     padding: 1rem;
-    background-color: #efefef;
+    background-color: #efefaf;
     text-align: center;
     font-size: 0.8em;
     font-style: italic;
@@ -142,9 +142,8 @@ button:hover {
 	margin: 10px;
     border: 2px solid #ffcc00;
     background-color: #bbaa00;
-	flex: initial;
-	width: 300px;
-	min-width: 150px;
+	flex: 2;
+	min-width: 200px;
     border-radius: 10px;
 	content-align: center;
 	height: auto;
@@ -162,11 +161,11 @@ button:hover {
 #content {
     padding: 5px;
 	margin: 10px;
-    border: 2px solid #dddddd;
-    background-color: #eeeeee;
+    border: 2px solid #ffdd50;
+    background-color: #ffbf7f;
 	min-width: 300px;
 	border-radius: 10px;
-	flex: 1;
+	flex: 3;
 }
 
 .error {
