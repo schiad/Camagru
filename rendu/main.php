@@ -2,8 +2,12 @@
 
 <form>
 	<div class="gallery">
-		<input type="radio" name="mask" value="barbe1"><br>
+		<input type="radio" name="mask" value="barbe1">
 		<img src="./img_src/barbe1.png" alt="barbe1"/>
+	</div>
+	<div class="gallery">
+		<input type="radio" name="mask" value="barbe2"><br>
+		<img src="./img_src/barbe2.png" alt="barbe1"/>
 	</div>
 </form>
 

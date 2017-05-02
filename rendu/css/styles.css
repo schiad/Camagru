@@ -9,11 +9,21 @@ html {
     box-sizing: inherit;
 }
 
+input {
+	margin-left: 42px;
+}
+
+form {
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+}
+
 div.gallery {
 	margin: 5px;
 	border: 1px solid #ccc;
-	float: center;
-	width: 30px;
+	width: 100px;
+	height: auto;
 }
 
 div.gallery img {
@@ -155,7 +165,6 @@ button:hover {
     border: 2px solid #dddddd;
     background-color: #eeeeee;
 	min-width: 300px;
-	height: 500px;
 	border-radius: 10px;
 	flex: 1;
 }
