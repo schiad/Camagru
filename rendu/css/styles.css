@@ -20,6 +20,17 @@ input {
 	justify-content: space-around;
 }
 
+#shot {
+	flex: 1;
+}
+
+.class_div {
+	width: 100%;
+	display: flex;
+	flex-grow: 1;
+	justify-content: space-around;
+}
+
 div.image {
 	margin: 5px;
 	border: 3px solid #000;
@@ -87,6 +98,11 @@ input, button {
 
 button:hover {
     background-color: #EEE;
+}
+
+#shot {
+	width: auto;
+	margin: 10px;
 }
 
 #upper_header {
