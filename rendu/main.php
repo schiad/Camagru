@@ -11,6 +11,7 @@
 			<img src="./img_src/barbe2.png" alt="barbe1"/>
 		</div>
 	</div>
+
 	<div class="class_div">
 		<input id="shot" type="submit" onclick="check_validate();" value="shot">
 	</div>
