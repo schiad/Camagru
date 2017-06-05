@@ -19,10 +19,10 @@ session_start();
 		<div id="content">
 			<?php
 			if (!isset($_GET["page"]) || $_GET["page"] == "home") {
-				include ("main.php");
+				include ("./main.php");
 			} 
 			if ($_GET["page"] == "View") {
-				include ("view.php");
+				include ("./view.php");
 			} else {
 			}
 			?>
