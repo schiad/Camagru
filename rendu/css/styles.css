@@ -33,7 +33,7 @@ input {
 
 div.image {
 	margin: 5px;
-	border: 3px solid #000;
+	border: 2px solid #ffff00;
 	width: 100px;
 	height: auto;
 }
@@ -151,6 +151,7 @@ button:hover {
 }
 
 #page_body {
+	content-align: center;
 	display: flex;
 }
 
@@ -160,7 +161,8 @@ button:hover {
     border: 2px solid #ffcc00;
     background-color: #bbaa00;
 	flex: 2;
-	min-width: 200px;
+	min-width: 100px;
+	max-width: 500px;
     border-radius: 10px;
 	content-align: center;
 	height: auto;
@@ -176,13 +178,13 @@ button:hover {
 }
 
 #content {
-    padding: 5px;
+    padding: 10px;
 	margin: 10px;
-    border: 2px solid #ffdd50;
+    border: 3px solid #ffdd50;
     background-color: #ffbf7f;
 	min-width: 300px;
 	border-radius: 10px;
-	flex: 3;
+	flex: 5;
 }
 
 .error {

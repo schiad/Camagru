@@ -17,8 +17,15 @@ session_start();
 
 	<div id="page_body">
 		<div id="content">
-			<p style="display:inline">Main page</p>
-			<?php include ("main.php"); ?>
+			<?php
+			if (!isset($_GET["page"]) || $_GET["page"] == "home") {
+				include ("main.php");
+			} 
+			if ($_GET["page"] == "View") {
+				include ("view.php");
+			} else {
+			}
+			?>
 		</div>
 		<div id="side">
 			<?php include ("side.php"); ?>
