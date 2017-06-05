@@ -20,10 +20,12 @@ session_start();
 <?php
 $extensions = array(".jpg", ".jpeg", ".png", ".gif");
 $target_dir = "./uploads/";
-$target_file = $target_dir . md5_file($_FILES["fileToUpload"]["tmp_name"]);
+if (strlen($_FILES["fileToUpload"]["tmp_name"])) {
+	$target_file = $target_dir . md5_file($_FILES["fileToUpload"]["tmp_name"]);
+}
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-if(isset($_POST["submit"])) {
+if(isset($_POST["submit"]) && strlen($_FILES["fileToUpload"]["tmp_name"])) {
 	#			echo "<p>" . getcwd() . "</p>";
 	#			echo $target_file;
 	#			echo "<br>" . var_dump($_FILES);
@@ -39,11 +41,9 @@ if(isset($_POST["submit"])) {
 			$target_file = $target_file . $ext;
 		}
 	}
-	if($check !== false && $ext_ok) {
-		echo "<p>File is an image - " . $check["mime"] . ".</p>";
-		echo $_FILES["fileToUpload"]["name"] . "<br>";
-		$uploadOk = 1;
-	} else {
+	$uploadOk = ($check !== false && $ext_ok);
+	if (!$check)
+	{
 		echo "<p class=error>File is not an image.<br>";
 		echo $_FILES["fileToUpload"]["name"] . "<br></p>";
 		$uploadOk = 0;
@@ -55,12 +55,12 @@ if(isset($_POST["submit"])) {
 		if (file_exists($target_file)) {
 			echo "<p class=error>Error it's seem files already exists.</p>";
 		} else {
-
 			if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-				#					echo "<p style='color:green'>The file " . basename( $_FILES["fileToUpload"]["name"]) . "Has been uploaded</p>";
-				#					$dest = imagecreatefrompng($target_file);
-				#					$src  = imagecreatefrompng($_POST['image']);
-				#					imagecopymerge($dest, $src, 0, 0, 0, 0, 100, 100, 100);
+				echo "<p style='color:green'>The file " . basename( $_FILES["fileToUpload"]["name"]) . "Has been uploaded</p>";
+				$dest = imagecreatefrompng($target_file);
+				$src  = imagecreatefrompng($_POST['image']);
+				imagecopymerge($dest, $src, 0, 0, 0, 0, 100, 100, 100);
+				imagepng($target_file);
 				echo "<img src='" . $target_file . "' width='100%' alt='target'>";
 			} else {
 				echo "<p style='color:red'>Error when moving file.</p>";
